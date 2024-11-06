@@ -1,8 +1,11 @@
 NAME = philo
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -pthread -g
+CFLAGS = -Wall -Wextra -Werror -pthread -g -fsanitize=address
 
 SRC = 	philo.c \
+		errors.c \
+		parse.c \
+		parse_utils.c \
 		 \
 		 \
 		 \

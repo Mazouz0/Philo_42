@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 05:54:47 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/06 09:15:55 by mohmazou         ###   ########.fr       */
+/*   Created: 2024/11/05 06:19:38 by mohmazou          #+#    #+#             */
+/*   Updated: 2024/11/05 08:47:24 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	ft_philo(int ac, char **av)
+int	error_philo(void)
 {
-(void)ac;
-(void)av;
-	
-	return (0);
+	write(2, "Error: Malloc OR Hardwaire probleme\n", 37);
+	return (1);
 }
 
-int	main(int ac, char **av)
+int	error_input(void)
 {
-	if (ac < 5 || ac > 6 || !is_all_digits(ac, av))
-		return (error_input());
-	if (ft_philo(ac, av))
-		return (error_philo());
-	return (0);
+	write(2, "Error: Invalide input\n", 23);
+	return (1);
 }
