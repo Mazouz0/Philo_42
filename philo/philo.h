@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:55:44 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/05 08:48:21 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/06 09:56:20 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef enum e_philo_state
 
 
 
-int	is_all_digits(int ac, char **av);
+int	is_valid_input(int ac, char **av);
 int	error_input(void);
 int	error_philo(void);
 

@@ -17,17 +17,20 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.c philo.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)
+	@echo "Cleaned up object files."
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "Cleaned up compiled files."
 
 re: fclean all
+	@echo "Recompiled all files."
 
 .PHONY: clean
