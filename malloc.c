@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 13:45:50 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/14 02:56:18 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:05:53 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*free_all(void **ptrs_list, int *index)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!ptrs_list)
 		return (NULL);
@@ -64,7 +64,7 @@ void	save_mutex(void *mtx, int flag)
 		return ;
 	}
 	mutexs[index++] = mtx;
-	mutexs[index] = NULL;	
+	mutexs[index] = NULL;
 }
 
 int	cleanup(char *str)
@@ -74,7 +74,7 @@ int	cleanup(char *str)
 	i = 0;
 	if (str)
 	{
-		while(str[i])
+		while (str[i])
 			i++;
 		write(2, str, i);
 	}

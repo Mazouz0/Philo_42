@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:54:47 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/14 05:38:24 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:51:05 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	main(int ac, char **av)
 	t_data	data;
 	t_philo	*philo;
 	t_mtx	*forks;
-	
+
 	if (ac < 5 || ac > 6 || !is_valid_input(ac, av, &arg))
 		return (error_input());
 	if (ft_allocat(&philo, &forks, arg))

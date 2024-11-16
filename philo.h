@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:55:44 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/14 03:37:25 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:00:10 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ typedef struct s_philo
 	t_share	*arg;
 }	t_philo;
 
-typedef	struct s_data
+typedef struct s_data
 {
 	int			ready_count;
 	int			full_philos;
@@ -94,8 +94,6 @@ typedef	struct s_data
 	t_mtx		meals;
 	t_mtx		stop_mtx;
 }	t_data;
-
-
 
 void	*ft_malloc(size_t size, int flag);
 int		is_valid_input(int ac, char **av, t_share *arg);
@@ -110,12 +108,10 @@ int		ft_thread(t_ptd *thread, void*(*routin)(void *), void *arg, int flag);
 int		ft_mutex(t_mtx *mutex, int flag);
 void	*ft_monitor(void *arg);
 void	*lifesycle(void *arg);
-void	ft_sleep(long to_sleep,t_philo *philo);
+void	ft_sleep(long to_sleep, t_philo *philo);
 int		is_dead(t_philo *philo);
 int		hold_fork(t_philo *philo);
 void	ft_eat(t_philo *philo);
 void	ft_write(t_philo *philo, char *flag);
-
-
 
 #endif

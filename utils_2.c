@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:51:00 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/14 05:41:52 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/16 20:06:32 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	*ft_monitor(void *arg)
 void	*lifesycle(void *arg)
 {
 	t_philo	*philo;
+
 	philo = (t_philo *)arg;
 	if (philo->id % 2 == 0)
 		ft_sleep(philo->arg->eat_time, philo);

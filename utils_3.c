@@ -6,12 +6,11 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:42:58 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/14 05:42:56 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:45:34 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
 
 int	is_dead(t_philo *philo)
 {
@@ -24,7 +23,7 @@ int	is_dead(t_philo *philo)
 void	ft_write(t_philo *philo, char *action)
 {
 	long	time;
-	
+
 	if (is_dead(philo))
 		return ;
 	ft_mutex(&philo->data->print, LOCK);

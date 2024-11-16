@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 06:24:42 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/13 19:14:42 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/16 17:04:53 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 int	ft_strlen(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!str)
 		return (0);
 	while (str[i])
 		i ++;
-	return (i);	
+	return (i);
 }
 
 long	to_int(char *str)
@@ -37,7 +37,6 @@ long	to_int(char *str)
 		i ++;
 	while (j >= i && (str[j] == ' ' || str[j] == '\t'))
 		j --;
-	
 	if (str[i] == '+')
 		i++;
 	while (i <= j)
@@ -77,8 +76,6 @@ int	is_digit(char *str)
 
 int	is_wrong_input(long nbr, int i, t_share *arg)
 {
-	if (nbr > INT_MAX)
-		return (1);
 	if (i == 1)
 	{
 		if (nbr < 1 || nbr > 200)
@@ -121,6 +118,8 @@ int	is_valid_input(int ac, char **av, t_share *arg)
 		if (!is_digit(av[i]))
 			return (0);
 		nbr = to_int(av[i]);
+		if (nbr > INT_MAX)
+			return (0);
 		if (is_wrong_input(nbr, i, arg))
 			return (0);
 	}
