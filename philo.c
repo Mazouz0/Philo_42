@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:54:47 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/16 19:51:05 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:02:03 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,13 @@ void	start_philo(t_philo *philo, t_share *arg)
 {
 	int	i;
 
-	if (ft_thread(&arg->monitor_ptd, ft_monitor, philo, CREATE))
-		return ;
 	i = -1;
 	while (++i < arg->nbr_philo)
 	{
 		if (ft_thread(&philo[i].thread, lifesycle, &philo[i], CREATE))
 			return ;
 	}
-	if (ft_thread(&arg->monitor_ptd, NULL, NULL, JOIN))
-		return ;
+	ft_monitor(philo);
 	i = -1;
 	while (++i < arg->nbr_philo)
 	{
@@ -80,6 +77,8 @@ int	main(int ac, char **av)
 
 	if (ac < 5 || ac > 6 || !is_valid_input(ac, av, &arg))
 		return (error_input());
+	if (ac == 6 && atoi(av[5]) == 0)
+		return (0);
 	if (ft_allocat(&philo, &forks, arg))
 		return (error_philo());
 	if (ft_init(&data, arg, philo, forks))

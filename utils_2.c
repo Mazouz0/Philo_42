@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:51:00 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/16 20:06:32 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:42:14 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	*ft_monitor(void *arg)
 	while (true)
 	{
 		i = -1;
+		passetime = 0;
 		while (++i < philo[0].arg->nbr_philo)
 		{
 			ft_mutex(&philo[0].data->monitor_mtx, LOCK);
