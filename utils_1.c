@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 16:36:54 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/17 12:23:24 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/18 16:18:15 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,6 @@ int	ft_init_mutex(t_data *data, t_share arg, t_mtx *forks)
 		|| ft_mutex(&data->monitor_mtx, INIT)
 		|| ft_mutex(&data->meals, INIT))
 		return (cleanup("MUTEX: Initialling failed"));
-	save_mutex(&data->stop_mtx, false);
-	save_mutex(&data->print, false);
-	save_mutex(&data->monitor_mtx, false);
-	save_mutex(&data->meals, false);
 	return (0);
 }
 

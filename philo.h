@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:55:44 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/16 17:00:10 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:40:45 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,10 @@ typedef struct s_data
 
 void	*ft_malloc(size_t size, int flag);
 int		is_valid_input(int ac, char **av, t_share *arg);
+long	to_int(char *str);
+int		ft_strlen(char *str);
 int		error_input(void);
-int		error_philo(void);
+int		error_philo(char *str);
 int		ft_mutex(t_mtx *mutex, int flag);
 void	save_mutex(void *mtx, int flag);
 int		cleanup(char *str);

@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 05:54:47 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/17 13:02:03 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:37:06 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int	ft_allocat(t_philo **philos, t_mtx **forks, t_share arg)
 {
 	*forks = (t_mtx *)ft_malloc((sizeof(t_mtx) * arg.nbr_philo), 0);
+	if (!(*forks))
+		return (1);
 	*philos = (t_philo *)ft_malloc((sizeof(t_philo) * arg.nbr_philo), 0);
-	if (!(*forks) || !(*philos))
+	if (!(*philos))
 		return (1);
 	return (0);
 }
@@ -77,12 +79,12 @@ int	main(int ac, char **av)
 
 	if (ac < 5 || ac > 6 || !is_valid_input(ac, av, &arg))
 		return (error_input());
-	if (ac == 6 && atoi(av[5]) == 0)
+	if (ac == 6 && to_int(av[5]) == 0)
 		return (0);
 	if (ft_allocat(&philo, &forks, arg))
-		return (error_philo());
+		return (error_philo("Malloc"));
 	if (ft_init(&data, arg, philo, forks))
-		return (error_philo());
+		return (error_philo("Mutix/Threads"));
 	start_philo(philo, &arg);
 	return (0);
 }

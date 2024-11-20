@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 23:42:58 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/16 17:45:34 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/18 18:07:11 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	ft_write(t_philo *philo, char *action)
 		return ;
 	ft_mutex(&philo->data->print, LOCK);
 	time = gettime() - philo->data->start_simulation;
-	printf("%ld %d %s\n", time, philo->id, action);
+	if (!philo->data->end_simulation)
+		printf("%ld %d %s\n", time, philo->id, action);
 	ft_mutex(&philo->data->print, UNLOCK);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mohmazou <mohmazou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:51:00 by mohmazou          #+#    #+#             */
-/*   Updated: 2024/11/17 12:42:14 by mohmazou         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:32:37 by mohmazou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	*ft_monitor(void *arg)
 		{
 			ft_mutex(&philo[0].data->monitor_mtx, LOCK);
 			passetime = gettime() - philo[i].last_meal_t;
-			if (passetime > philo[i].arg->die_time)
+			if (passetime >= philo[i].arg->die_time)
 			{
 				end_sim(philo[i]);
 				printf("%ld %d %s\n", passetime, philo[i].id, DIED);
